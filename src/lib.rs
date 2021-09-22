@@ -35,13 +35,13 @@ pub fn invoke_process()
     let owner =Pubkey::default();
     let account=AccountInfo::new(
         &key,
-        false,
-        true,
-        &mut lamports,
-        &mut data,
-        &owner,
-        false,
-        Epoch::default(),
+        false,//this is was the transaction signed or not .
+        true,//can we write to this account.
+        &mut lamports,//Updatable balance .
+        &mut data,//updatable data.
+        &owner,//progam which owns this account.
+        false,//No idea.
+        Epoch::default(),//Something for rent .
     );
 
     let instruction_data:Vec<u8>=Vec::new();
