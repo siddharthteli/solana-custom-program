@@ -8,7 +8,10 @@ use solana_program::{
     msg,
     program_error::ProgramError,
     pubkey::Pubkey,
+    clock::Epoch,
 };
+
+use std::mem;
 
 entrypoint!(process_instruction);
 
@@ -20,4 +23,32 @@ _instruction_data: &[u8],
 ) -> ProgramResult {
  msg!("Hello  sfsa{}",program_id);
     Ok(())
+}
+
+
+pub fn invoke_process() 
+-> ProgramResult {
+    let program_id=Pubkey::default();
+    let key=Pubkey::default();
+    let mut lamports=0;
+    let mut data=vec![0;mem::size_of::<u32>()];
+    let owner =Pubkey::default();
+    let account=AccountInfo::new(
+        &key,
+        false,
+        true,
+        &mut lamports,
+        &mut data,
+        &owner,
+        false,
+        Epoch::default(),
+    );
+
+    let instruction_data:Vec<u8>=Vec::new();
+    let accounts=vec![account];
+
+
+    let temp= process_instruction(&program_id, &accounts, &instruction_data).unwrap();
+    Ok(())
+
 }
