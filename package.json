@@ -3,6 +3,10 @@
     "@solana/web3.js": "^1.29.0",
     "fs": "0.0.1-security",
     "js-yaml": "^4.1.0",
+    "mz": "^2.7.0",
     "yaml": "2.0.0-8"
+  },
+  "devDependencies": {
+    "@types/mz": "^2.7.4"
   }
 }
