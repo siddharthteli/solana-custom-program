@@ -9,3 +9,6 @@ edition = "2018"
 solana-program="=1.7.9"
 
 
+[lib]
+name = "custom"
+crate-type = ["cdylib", "lib"]

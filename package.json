@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "@solana/web3.js": "^1.29.0"
+    "@solana/web3.js": "^1.29.0",
+    "fs": "0.0.1-security",
+    "js-yaml": "^4.1.0",
+    "yaml": "2.0.0-8"
   }
 }

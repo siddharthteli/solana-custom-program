@@ -1,6 +1,6 @@
 //Building -
 //cargo build-bpf --manifest-path=./Cargo.toml --bpf-out-dir=dist/program
-
+//deploy - solana program deploy dist/program/custom.so
 use solana_program::{
     account_info::{next_account_info, AccountInfo},
     entrypoint,
@@ -21,7 +21,10 @@ program_id: &Pubkey,
 accounts: &[AccountInfo], 
 _instruction_data: &[u8],
 ) -> ProgramResult {
- msg!("Hello  sfsa{}",program_id);
+let accounts_iter = &mut accounts.iter();
+let account = next_account_info(accounts_iter)?;
+
+ msg!("Hello  program id---{} & account owner{}",program_id,account.owner);
     Ok(())
 }
 
