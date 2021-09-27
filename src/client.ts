@@ -1,5 +1,5 @@
 import { Connection, Keypair } from "@solana/web3.js";
-import { async } from "regenerator-runtime";
+
 import path from 'path';
 import os from 'os';
 import fs from 'mz/fs';
@@ -29,5 +29,21 @@ export async function connection() :Promise<void> {
    
     
 }
+
+
+/*
+
+curl http://localhost:8899 -X POST -H "Content-Type: application/json" -d '
+  {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getBalance",
+    "params": [
+      "8hmenUPekm8Gr735tt9Hq65YhJggXsAF8hYPJVx2qnaW"
+    ]
+  }
+'
+
+*/
 
 
